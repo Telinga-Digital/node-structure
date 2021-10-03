@@ -1,0 +1,23 @@
+{
+  "name": "node-structure",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/endrureza/node-structure.git",
+  "author": "Endru Reza <lotusb13@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "APP_ENV=production node server.js",
+    "dev": "APP_ENV=development nodemon server.js",
+    "alias:link": "link-module-alias"
+  },
+  "_moduleAliases": {
+    "~node-structure": ".",
+    "config": "config"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "fastify": "^3.22.0",
+    "link-module-alias": "^1.2.0",
+    "module-alias": "^2.2.2"
+  }
+}
