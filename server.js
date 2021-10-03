@@ -1,16 +1,17 @@
 require('dotenv').config()
-require('module-alias/register')
-const config = require('config')
-console.log(config)
-// const fastify = require('fastify')({ logger: process.env.APP_ENV === 'production' })
+const config = require('./utils/config')
+const fastify = require('fastify')({
+  logger: config('app.env') === 'production',
+})
 
-// const start = async () => {
-//   try {
-//     await fastify.listen(process.env.APP_PORT)
-//   } catch (error) {
-//     fastify.log.error(err)
-//     process.exit(1)
-//   }
-// }
+const start = async () => {
+  try {
+    await fastify.register(require('./routes/v1'), { prefix: '/v1' })
+    await fastify.listen(config('app.port'))
+  } catch (error) {
+    fastify.log.error(error)
+    process.exit(1)
+  }
+}
 
-// start()
+start()

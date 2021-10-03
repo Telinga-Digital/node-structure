@@ -6,18 +6,23 @@
   "author": "Endru Reza <lotusb13@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "APP_ENV=production node server.js",
-    "dev": "APP_ENV=development nodemon server.js",
+    "start": "APP_ENV=production node --exec node_modules/.bin/babel-node server.js",
+    "dev": "APP_ENV=development nodemon --exec node_modules/.bin/babel-node server.js",
     "alias:link": "link-module-alias"
   },
   "_moduleAliases": {
-    "~node-structure": ".",
-    "config": "config"
+    "~node-structure": "."
   },
   "dependencies": {
     "dotenv": "^10.0.0",
     "fastify": "^3.22.0",
     "link-module-alias": "^1.2.0",
     "module-alias": "^2.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/node": "^7.15.4",
+    "@babel/preset-env": "^7.15.6"
   }
 }

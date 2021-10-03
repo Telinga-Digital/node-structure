@@ -1,4 +1,4 @@
-export default {
+export const database = {
   default: process.env.DB_CONNECTION || 'mysql',
   connection: {
     mysql: {
@@ -19,3 +19,5 @@ export default {
     }
   }
 }
+
+export default database
