@@ -8,10 +8,12 @@ This repository is created a reference for node project structure.
 
 ## How to Run
 
-* git clone git@github.com:endrureza/node-structure.git
-* cd node-structure
-* yarn install
-* yarn dev
+```bash
+git clone git@github.com:endrureza/node-structure.git
+cd node-structure
+yarn install
+yarn dev
+```
 
 ## Application Structure
 
@@ -46,6 +48,10 @@ All test mechanism should go to this folder
 ### `/utils`
 
 All imported library that is not exposed to outside of package should go to this folder
+
+### `app.js`
+
+This file must be included in `server.js` to run as it provides all activity for fastify and for testing purpose too.
 
 ### `server.js`
 
