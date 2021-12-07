@@ -12,4 +12,4 @@ const redis = () => {
   return redis
 }
 
-module.exports = redis
+module.exports = redis()
